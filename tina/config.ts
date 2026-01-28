@@ -11,8 +11,8 @@ const socialIconOptions = Object.entries(SOCIAL_ICON_REGISTRY ?? {}).map(
 )
 
 export default defineConfig({
-  clientId: "",
-  token: "",
+  clientId: "e445f084-d975-490e-aa84-8047d4e74536",
+  token: "ec9871b59d5a5cf9fb8345a60977db23b7b898d7",
   branch: 'main',
 
   local: {
