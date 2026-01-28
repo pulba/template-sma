@@ -1,0 +1,168 @@
+{
+  "hero": {
+    "enabled": true,
+    "slides": [
+      {
+        "backgroundImage": "/uploads/bakar.jpeg",
+        "welcome": "Selamat Datang di",
+        "headline": "SMA Negeri 1 Indonesia",
+        "city": "Malang",
+        "subtitle": "Sekolah Unggulan Berbasis Se-Indonesia"
+      },
+      {
+        "backgroundImage": "/uploads/hero-2.jpg",
+        "welcome": "Slide Kedua",
+        "headline": "Judul Slide 2",
+        "city": "Kota Kedua",
+        "subtitle": "Deskripsi slide kedua"
+      },
+      {
+        "backgroundImage": "/uploads/hero-3.jpg",
+        "welcome": "Slide Ketiga",
+        "headline": "Judul Slide 3",
+        "city": "Kota Ketiga",
+        "subtitle": "Deskripsi slide ketiga"
+      }
+    ],
+    "textColors": {
+      "welcomeColor": "#ffffff",
+      "headlineColor": "#ffffff",
+      "cityColor": "#fbbf24",
+      "subtitleColor": "#e5e7eb"
+    },
+    "overlay": {
+      "gradientColor": "#14532d",
+      "opacity": 50
+    },
+    "marquee": {
+      "scrollSpeed": 15,
+      "enabled": true
+    }
+  },
+  "header": {
+    "items": [
+      {
+        "label": "Home",
+        "href": "/",
+        "isActive": true
+      },
+      {
+        "label": "Profil ",
+        "href": "/about",
+        "isActive": false
+      },
+      {
+        "label": "Berita",
+        "href": "/posts/news",
+        "isActive": false
+      },
+      {
+        "label": "Pengumuman",
+        "href": "/posts/pengumuman",
+        "isActive": false
+      },
+      {
+        "label": "Prestasi",
+        "href": "/posts/prestasi",
+        "isActive": false
+      },
+      {
+        "label": "Kontak",
+        "href": "/contact",
+        "isActive": false
+      }
+    ],
+    "style": {
+      "bgColor": "#F6F6F6",
+      "textColor": "#6689BF",
+      "hoverColor": "#254166",
+      "borderColor": "#e5e7eb",
+      "bgTransparent": "solid"
+    },
+    "schoolInfo": {
+      "name": "SMAN 1 INDONESIA",
+      "logo": "/uploads/logo-sma.png",
+      "logoAlt": "SMAN 1 INDONESIA",
+      "logoWidthDesktop": 40,
+      "logoWidthMobile": 40,
+      "showName": true
+    }
+  },
+  "slider": {
+    "images": [
+      {
+        "url": "/uploads/smanegeri1indonesia.png",
+        "alt": "SMAN 1 INDONESIA",
+        "caption": ""
+      },
+      {
+        "url": "/uploads/erika-fletcher-MZxqc6n9qCw-unsplash.jpg",
+        "alt": "Slider Image",
+        "caption": ""
+      },
+      {
+        "url": "/uploads/20251104113343-whatsapp-image-2025-11-04-at-092100.webp",
+        "alt": "Slider Image",
+        "caption": ""
+      }
+    ],
+    "schoolInfo": {
+      "name": "SMA NEGERI 01 ",
+      "city": "INDONESIA",
+      "motto": "Berprestasi dalam Akademik. Berkarakter dalam Sikap. Bertanggung Jawab dalam Tindakan.",
+      "welcomeMessage": "Welcom to",
+      "accreditation": "TERAKREDITASI A",
+      "textSettings": {
+        "color": "#FFFFFF",
+        "fontFamily": {
+          "welcome": "font-mono"
+        }
+      }
+    },
+    "overlay": {
+      "color": "#000000",
+      "opacity": "0.8"
+    },
+    "animation": {
+      "autoSlide": true,
+      "marqueeSpeed": 1
+    }
+  },
+  "seo": {
+    "siteInfo": {
+      "siteName": "SMAN 1 INDONESIA",
+      "siteUrl": "https://smanegeri1indonesia.sch.id",
+      "siteDescription": "Rasa Penasaran Menginspirasi Pengetahuan",
+      "siteLogo": "/uploads/logo-sma.png",
+      "favicon": "/uploads/logo-sma.png"
+    },
+    "globalMeta": {
+      "titleTemplate": "%s | Sma Negeri 1 Indonesia",
+      "defaultTitle": "Sma Negeri 1 Indonesia",
+      "defaultDescription": "Rasa Penasaran Menginspirasi Pengetahuan",
+      "defaultKeywords": "Sma Negeri 1 Indonesia"
+    },
+    "openGraph": {
+      "type": "website",
+      "image": "/uploads/smanegeri1indonesia.png"
+    },
+    "analytics": {
+      "gaId": "G-ML2YKK4FMF"
+    }
+  },
+  "footer": {
+    "schoolName": "SMA NEGERI 1 INDONESIA"
+  },
+  "themeColors": {
+    "background": "#F6F6F6",
+    "primary": "#254166",
+    "secondary": "#6689BF",
+    "surface": "#F6F6F6",
+    "textBase": "#111827",
+    "textHeading": "#254166",
+    "textMuted": "#6b7280",
+    "link": "#254166",
+    "linkHover": "#6689BF",
+    "border": "#D4D4D4"
+  }
+}

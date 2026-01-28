@@ -1,0 +1,44 @@
+{
+  "teachers": [
+    {
+      "name": "Budi Santoso, S.Pd., M.Pd.",
+      "avatar": "/uploads/danny-ocean-ehUYU820lcA-unsplash.jpg",
+      "role": "kepala-sekolah"
+    },
+    {
+      "name": "Ahmad Fauzi, S.Pd., M.Sc.",
+      "avatar": "/uploads/humberto-chavez-F_CnS-8NlZQ-unsplash.jpg",
+      "role": "pend.-agama-islam"
+    },
+    {
+      "name": "Siti Aminah, S.Pd.",
+      "avatar": "/uploads/aksin-famizani-FkfBOZrTDYA-unsplash.jpg",
+      "role": "pend.-ekonomi"
+    },
+    {
+      "name": "Rina Wulandari, M.Pd.",
+      "avatar": "/uploads/doctake-9J9LFdkvhU4-unsplash.jpg",
+      "role": "guru-mapel"
+    },
+    {
+      "name": "Dedi Pratama, S.Pd., M.Pd.",
+      "avatar": "/uploads/hoi-an-photographer-O3uN6fIuTig-unsplash.jpg",
+      "role": "pend.-agama-islam"
+    },
+    {
+      "name": "Nurul Hidayati, S.Pd., M.Psi.",
+      "avatar": "/uploads/muhammad-faiz-zulkeflee-KrR7xEn4HV8-unsplash.jpg",
+      "role": "pend.-agama-islam"
+    },
+    {
+      "name": "Andi Kurniawan, S.Pd., M.T.",
+      "avatar": "/uploads/janko-ferlic-G-jo31ESuRE-unsplash.jpg",
+      "role": "penjaskes"
+    },
+    {
+      "name": "Sri Lestari, S.Pd.",
+      "avatar": "/uploads/model.png",
+      "role": "pend.-fisika"
+    }
+  ]
+}

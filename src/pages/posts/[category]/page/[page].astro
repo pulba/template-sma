@@ -1,0 +1,95 @@
+---
+//src/pages/posts/[category]/page/[page].astro
+export const prerender = true;
+import Layout from "../../../../layouts/Layout.astro";
+import CardPosts from "../../../../components/CardPosts.astro";
+import Pagination from "../../../../components/Pagination.astro";
+import { getCollection } from "astro:content";
+import { paginate } from "../../../../utils/pagination";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("posts");
+    const pageSize = 8;
+
+    // Group posts by category
+    const postsByCategory = posts.reduce(
+        (acc, post) => {
+            const cat = (post.data.category || "uncategorized").toLowerCase();
+            if (!acc[cat]) acc[cat] = [];
+            acc[cat].push(post);
+            return acc;
+        },
+        {} as Record<string, typeof posts>,
+    );
+
+    const paths = [];
+
+    for (const [category, categoryPosts] of Object.entries(postsByCategory)) {
+        const totalPages = Math.ceil(categoryPosts.length / pageSize);
+
+        // Generate paths for page 2 onwards (page 1 is handled by index.astro)
+        for (let page = 2; page <= totalPages; page++) {
+            paths.push({
+                params: { category, page: String(page) },
+                props: { page, totalPages, categoryPosts },
+            });
+        }
+    }
+
+    return paths;
+}
+
+const { category, page } = Astro.params;
+const { totalPages, categoryPosts } = Astro.props;
+
+const pageSize = 8;
+const currentPage = parseInt(page);
+
+const pagination = paginate({
+    totalItems: categoryPosts.length,
+    currentPage,
+    pageSize,
+});
+
+const pagedPosts = categoryPosts.slice(pagination.start, pagination.end);
+
+const baseUrl = `/posts/${category}`;
+---
+
+<Layout title={`${category} - Halaman ${currentPage}`}>
+    <section>
+        <div class="container min-h-screen py-12 px-6 mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {
+                    pagedPosts.map((post) => {
+                        const slug = post.id.split("/").pop();
+                        const url = `/posts/${category}/${slug}`;
+
+                        return (
+                            <CardPosts
+                                title={post.data.title}
+                                description={post.data.description}
+                                image={post.data.heroImage}
+                                date={post.data.pubdate ?? null}
+                                category={category}
+                                url={url}
+                                author={
+                                    post.data.author
+                                        ? { name: post.data.author }
+                                        : undefined
+                                }
+                            />
+                        );
+                    })
+                }
+            </div>
+            <div class="mt-10 flex justify-center">
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    baseUrl={baseUrl}
+                />
+            </div>
+        </div>
+    </section>
+</Layout>

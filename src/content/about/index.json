@@ -1,0 +1,70 @@
+{
+  "gallery": {
+    "items": [
+      {
+        "title": "Upacara Bendera",
+        "image": "/uploads/SE-Terbaru-Upacara-Bendera-Sekolah-Wajib-Baca-Ikrar-Pelajar-750x500.webp"
+      },
+      {
+        "title": "Kegiatan Pramuka",
+        "image": "/uploads/1759283096.jpeg"
+      },
+      {
+        "title": "TURNAMEN FUTSAL",
+        "image": "/uploads/futsal-ma-miftahul-huda-sanyir.png"
+      },
+      {
+        "title": "JUARA NASIONAL",
+        "image": "/uploads/naufal-osn-informatika.jpeg"
+      }
+    ]
+  },
+  "facilities": {
+    "items": [
+      {
+        "title": "Laboratorium Komputer",
+        "image": "/uploads/20251104113343-whatsapp-image-2025-11-04-at-092100.webp"
+      },
+      {
+        "title": "Perpustakaan",
+        "image": "/uploads/zoshua-colah-bz4vI87iRQc-unsplash.jpg"
+      }
+    ]
+  },
+  "kepegawaian": {
+    "items": [
+      {
+        "title": "Daftar Tenaga Pendidik dan Kependidikan",
+        "image": "/uploads/premium_photo-1661756423422-4486e27eb6dd.avif",
+        "body": "## Daftar Tenaga Pendidik dan Kependidikan\n\n| NAMA                          | ROLE                   |\n| ----------------------------- | ---------------------- |\n| Budi Santoso, S.Pd., M.Pd.    | Kepala Madrasah        |\n| Ahmad Fauzi, S.Pd., M.Sc.     | Pendidikan Agama Islam |\n| Siti Aminah, S.Pd.            | Pendidikan Ekonomi     |\n| Rina Wulandari, M.Pd.         | Pendidikan Seni Budaya |\n| Dedi Pratama, S.Pd., M.Pd.    | Pendidikan Agama Islam |\n| Nurul Hidayati, S.Pd., M.Psi. | Pendidikan B. Arab     |\n| Andi Kurniawan, S.Pd., M.T.   | Pendidikan Olahraga    |\n| Sri Lestari, S.Pd.            | Pendidikan Agama Islam |\n| Muhammad Rizky, S.Pd., M.Pd.  | Pendidikan Agama Islam |\n| Dewi Anggraini, Dr., M.Pd.    | Pendidikan Fisika      |\n| Nizammudin, S.Pd.             | Guru Kelas             |\n|                               |                        |\n"
+      }
+    ]
+  },
+  "profil": {
+    "items": [
+      {
+        "title": "Profil Sekolah",
+        "image": "/uploads/smanegeri1indonesia.png",
+        "body": "| No | Keterangan                  | Data                                                                                                                              |\n| -- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |\n| 1  | Nama Sekolah                | SMA Negeri 1 Indonesia                                                                                                            |\n| 2  | NPSN                        | 20102467                                                                                                                          |\n| 3  | Jenjang Pendidikan          | SMA                                                                                                                               |\n| 4  | Status Sekolah              | NEGERI                                                                                                                            |\n| 5  | Alamat Sekolah              | Jalan Taman Wijaya Kusuma, RT 008 / RW 004 Kel. Cilandak Barat, Kec. Cilandak, Kab. Jakarta Selatan, DKI Jakarta 12430, Indonesia |\n| 6  | Posisi Geografis            | -6 Lintang, 106 Bujur                                                                                                             |\n| 7  | SK Pendirian Sekolah        |                                                                                                                                   |\n| 8  | Tanggal SK Pendirian        |                                                                                                                                   |\n| 9  | Status Kepemilikan          | Pemerintah Daerah                                                                                                                 |\n| 10 | SK Izin Operasional         |                                                                                                                                   |\n| 11 | Tanggal SK Izin Operasional |                                                                                                                                   |\n| 12 | Kebutuhan Khusus Dilayani   | Tidak ada                                                                                                                         |\n| 13 | Nomor Rekening              |                                                                                                                                   |\n| 14 | Nama Bank                   |                                                                                                                                   |\n| 15 | Cabang KCP/Unit             |                                                                                                                                   |\n| 16 | Rekening Atas Nama          |                                                                                                                                   |\n| 17 | MBS                         |                                                                                                                                   |\n| 18 | Luas Tanah Milik (m²)       |                                                                                                                                   |\n| 19 | Luas Tanah Bukan Milik (m²) | 0                                                                                                                                 |\n| 20 | Nama Wajib Pajak            |                                                                                                                                   |\n| 21 | NPWP                        |                                                                                                                                   |\n| 22 | Nomor Telepon               |                                                                                                                                   |\n| 23 | Nomor Fax                   |                                                                                                                                   |\n| 24 | Email                       |                                                                                                                                   |\n| 25 | Website                     |                                                                                                                                   |\n| 26 | Waktu Penyelenggaraan       | Sehari penuh (5 h/m)                                                                                                              |\n| 27 | Bersedia Menerima BOS       | Bersedia                                                                                                                          |\n| 28 | Sertifikasi ISO             | Belum Bersertifikat                                                                                                               |\n| 29 | Sumber Listrik              | PLN                                                                                                                               |\n| 30 | Daya Listrik (Watt)         |                                                                                                                                   |\n| 31 | Akses Internet              |                                                                                                                                   |\n| 32 | Akses Internet Alternatif   | -                                                                                                                                 |\n| 33 | Kepala Sekolah              |                                                                                                                                   |\n| 34 | Operator Pendataan          |                                                                                                                                   |\n| 35 | Akreditasi                  |                                                                                                                                   |\n| 36 | Kurikulum                   | Kurikulum Merdeka                                                                                                                 |\n"
+      }
+    ]
+  },
+  "sambutan": {
+    "items": [
+      {
+        "title": "Sambutan Kepala Sekolah",
+        "image": "/uploads/humberto-chavez-F_CnS-8NlZQ-unsplash.jpg",
+        "body": "### *Bismillahirrohmanirrahim*\n\n##### Assalamu‘alaikum Wr. Wb.\n\nAlhamdulillah kami panjatkan syukur kepada Allah SWT. Berkat rahmat dan karunia-Nya Website sekolah ini dengan domain sman1indonesia.sch.id dapat diperbaharui dan dikembangkan. Kami menyambut dengan hangat kunjungan Anda di Website resmi SMA Negeri 1 Indonesia. Di era globalisasi dan perkembangan teknologi informasi sekarang ini, website menjadi bagian penting dalam dunia pendidikan khususnya sekolah. Website berfungsi sebagai sarana penyebaran informasi dan perkembangan terbaru sekolah yang perlu diketahui berbagai pihak. Selain itu, website menjadi media promosi yang efektif. Setiap kegiatan dan pencapaian sekolah dapat diunggah sebagai dokumentasi yang informatif bagi masyarakat.\n\nSebagai pimpinan sekolah saya mengucapkan terima kasih kepada tim yang telah menyusun dan mengelola Website ini. Kami memahami masih terdapat kekurangan. Saran dan kritik dari seluruh warga sekolah dan masyarakat sangat kami harapkan untuk pengembangan Website ini.\n\nSaya berharap Website ini dapat menjadi sarana interaksi yang positif di dunia maya bagi seluruh warga sekolah dan masyarakat umum. Silaturahim yang baik dapat terjalin. Mari bekerja dan berkarya dengan niat tulus demi kemajuan pendidikan dan bangsa.\n\nSemoga Allah SWT meridhai usaha kita semua. Aamiin YRA\n\n##### *Wassalamu‘alaikum Wr. Wb.*\n\nKepala SMA Negeri 1 Indonesia\n\n#### *Susilo Bambang, M.Pd*\n"
+      }
+    ]
+  },
+  "visimisi": {
+    "items": [
+      {
+        "title": "Visi Misi Sekolah",
+        "image": "/uploads/smanegeri1indonesia.png",
+        "body": "### Visi Madrasah\n\n###### *Terwujudnya warga madrasah yang Intelektual, Agamis, Kreatif & Berakhlaqul Karimah*\n\n### Misi Madrasah\n\n1. Melaksanakan manajemen madrasah yang kuat dan efektif;\n2. Menciptakan iklim belajar yang efektif dan bermakna bagi siswa melalui pendekatan saintifik;\n3. Melengkapi dan memfungsikan sarana dan prasarana yang menunjang peningkatan mutu pendidikan;\n4. Menciptakan hubungan dan kerjasama yang harmonis pada tingkat satuan pendidikan, masyarakat dan instansi pemerintah;\n5. Menciptakan lingkungan madrasah yang bersih, hijau dan ramah lingkungan;\n6. Memiliki semangat inovatif, renponsive, efektif dan kreatif.\n"
+      }
+    ]
+  }
+}
