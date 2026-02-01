@@ -25,7 +25,6 @@
     "astro-robots-txt": "^1.0.0",
     "astro-seo-schema": "^5.1.0",
     "dotenv": "^17.2.3",
-    "gsap": "^3.13.0",
     "html2canvas": "^1.4.1",
     "markdown-it": "^14.1.0",
     "schema-dts": "^1.1.5",
@@ -34,6 +33,7 @@
     "tinacms-gitprovider-github": "^4.0.4"
   },
   "devDependencies": {
+    "@playform/compress": "0.2.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tinacms/cli": "^2.0.6",
     "@types/node": "^24.10.1"

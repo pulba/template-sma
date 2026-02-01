@@ -128,3 +128,30 @@ hr {
     @apply text-text text-base empty:hidden;
   }
 }
+
+/* ===== SCROLL ANIMATIONS ===== */
+/* Animasi untuk menggantikan GSAP */
+
+/* Initial state: hidden */
+.animate-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.5s cubic-bezier(0.215, 0.61, 0.355, 1),
+              transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Visible state: triggered by Intersection Observer */
+.animate-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Reduce motion untuk accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+

@@ -362,9 +362,11 @@ const breadcrumbSchema = generateBreadcrumbSchema();
   href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
 />
 
+<!-- ⚡ CRITICAL: Charset MUST be first (Lighthouse requirement) -->
+<meta charset="UTF-8" />
+
 <!-- Basic Meta Tags -->
 <title>{pageTitle}</title>
-<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content={pageDescription} />
 <meta name="theme-color" content="#1a1a2e" />
@@ -478,7 +480,7 @@ const breadcrumbSchema = generateBreadcrumbSchema();
   analyticsConfig.gaId && (
     <>
       <script
-        async
+        defer
         src={`https://www.googletagmanager.com/gtag/js?id=${analyticsConfig.gaId}`}
       />
       <script>

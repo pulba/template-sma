@@ -80,7 +80,7 @@ const isActiveLink = (href: string): boolean => {
             class="h-auto relative z-10 transition-transform duration-300 group-hover:scale-105"
             style={`width: ${schoolInfo.logoWidthDesktop}px;`}
             width={schoolInfo.logoWidthDesktop}
-            height={schoolInfo.logoWidthDesktop}
+            height={Math.round(schoolInfo.logoWidthDesktop * (1167 / 1280))}
           />
         </div>
 
@@ -217,7 +217,7 @@ const isActiveLink = (href: string): boolean => {
             class="h-auto"
             style={`width: ${schoolInfo.logoWidthMobile}px;`}
             width={schoolInfo.logoWidthMobile}
-            height={schoolInfo.logoWidthMobile}
+            height={Math.round(schoolInfo.logoWidthMobile * (1167 / 1280))}
           />
           <div class="flex flex-col leading-tight">
             <span class="text-sm font-bold text-heading uppercase"

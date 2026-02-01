@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import cloudflare from "@astrojs/cloudflare"
 import alpinejs from "@astrojs/alpinejs";
+import compress from "@playform/compress";
 import { onRequest } from './src/middleware/auth';
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
@@ -30,9 +31,21 @@ export default defineConfig({
   },
   output: "server",
   adapter: cloudflare(),
-  integrations: [alpinejs(), sitemap(), robotsTxt({
-    sitemap: [
-      `${normalizedSiteUrl}sitemap.xml`
-    ],
-  })],
+  integrations: [
+    alpinejs(),
+    sitemap(),
+    robotsTxt({
+      sitemap: [
+        `${normalizedSiteUrl}sitemap.xml`
+      ],
+    }),
+    compress({
+      CSS: true,
+      HTML: true,
+      Image: true,
+      JavaScript: true,
+      SVG: true,
+      Logger: 1,
+    }),
+  ],
 });
