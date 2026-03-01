@@ -1,0 +1,274 @@
+---
+// src/pages/osis.astro
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+// Fetch OSIS Data
+const osisCollection = await getCollection("osis");
+// Assume there's only one entry for pengurus (the single source of truth)
+const osisData = osisCollection[0]?.data;
+
+// Fallback if no data is found yet
+if (!osisData) {
+    return Astro.redirect("/404");
+}
+
+const { periode, visi, misi, pembina, inti, sekbid, heroImage } = osisData;
+---
+
+<Layout title={`Susunan Pengurus OSIS - Periode ${periode}`}>
+    <!-- Hero Section -->
+    <section
+        class="bg-primary text-surface py-20 px-6 relative overflow-hidden"
+    >
+        {
+            heroImage && (
+                <img
+                    src={heroImage}
+                    alt={`OSIS Periode ${periode}`}
+                    class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay"
+                />
+            )
+        }
+        <div
+            class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"
+        >
+        </div>
+        <div class="container mx-auto max-w-4xl text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-animate="fade">
+                Susunan Pengurus OSIS
+            </h1>
+            <p
+                class="text-xl md:text-2xl text-blue-100 font-medium"
+                data-animate="fade"
+            >
+                Periode {periode}
+            </p>
+        </div>
+    </section>
+
+    <!-- Visi & Misi Section -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-5xl">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100"
+                data-animate="fade"
+            >
+                <!-- Visi -->
+                <div>
+                    <h2
+                        class="text-2xl font-bold text-primary mb-4 flex items-center gap-3"
+                    >
+                        <span class="bg-blue-100 text-blue-600 p-2 rounded-lg">
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                ></path><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                ></path></svg
+                            >
+                        </span>
+                        Visi
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed text-lg italic">
+                        "{visi}"
+                    </p>
+                </div>
+
+                <!-- Misi -->
+                <div>
+                    <h2
+                        class="text-2xl font-bold text-primary mb-4 flex items-center gap-3"
+                    >
+                        <span class="bg-blue-100 text-blue-600 p-2 rounded-lg">
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                                ></path></svg
+                            >
+                        </span>
+                        Misi
+                    </h2>
+                    <ul class="space-y-3">
+                        {
+                            misi.map((item, index) => (
+                                <li class="flex items-start gap-3">
+                                    <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-700 text-sm font-bold mt-0.5">
+                                        {index + 1}
+                                    </span>
+                                    <span class="text-gray-700 leading-relaxed">
+                                        {item.poin}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Struktur Organisasi Section -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16" data-animate="fade">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    Struktur Kepengurusan
+                </h2>
+                <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Pembina OSIS -->
+            {
+                pembina && (
+                    <div class="mb-20 flex justify-center" data-animate="fade">
+                        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6 max-w-sm w-full text-center hover:shadow-lg transition-shadow">
+                            <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-blue-50 shadow-inner">
+                                <img
+                                    src={
+                                        pembina.avatar ||
+                                        "/images/default-avatar.png"
+                                    }
+                                    alt={pembina.name}
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-1">
+                                {pembina.name}
+                            </h3>
+                            <p class="text-secondary font-medium px-3 py-1 bg-blue-50 rounded-full inline-block text-sm">
+                                {pembina.jabatan || "Pembina OSIS"}
+                            </p>
+                        </div>
+                    </div>
+                )
+            }
+
+            <!-- Inti OSIS -->
+            {
+                inti && inti.length > 0 && (
+                    <div class="mb-20" data-animate="fade">
+                        <h3 class="text-2xl font-bold text-center text-gray-800 mb-10 pb-2 border-b-2 border-gray-100 inline-block mx-auto left-1/2 relative -translate-x-1/2">
+                            Pengurus Inti
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {inti.map((member) => (
+                                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center hover:shadow-md transition-shadow hover:-translate-y-1 transform duration-300">
+                                    <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-gray-100">
+                                        <img
+                                            src={
+                                                member.avatar ||
+                                                "/images/default-avatar.png"
+                                            }
+                                            alt={member.name}
+                                            class="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">
+                                        {member.name}
+                                    </h4>
+                                    <p class="text-primary font-medium text-sm mb-3">
+                                        {member.role}
+                                    </p>
+
+                                    {member.instagram && (
+                                        <a
+                                            href={`https://instagram.com/${member.instagram}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-pink-600 transition-colors"
+                                        >
+                                            <svg
+                                                class="w-4 h-4"
+                                                fill="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                                            </svg>
+                                            @{member.instagram}
+                                        </a>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )
+            }
+
+            <!-- Koordinator / Sekbid -->
+            {
+                sekbid && sekbid.length > 0 && (
+                    <div data-animate="fade">
+                        <h3 class="text-2xl font-bold text-center text-gray-800 mb-10 pb-2 border-b-2 border-gray-100 inline-block mx-auto left-1/2 relative -translate-x-1/2">
+                            Koordinator & Sekbid
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            {sekbid.map((member) => (
+                                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-center gap-4 hover:bg-gray-50 transition-colors">
+                                    <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border border-gray-200">
+                                        <img
+                                            src={
+                                                member.avatar ||
+                                                "/images/default-avatar.png"
+                                            }
+                                            alt={member.name}
+                                            class="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div>
+                                        <h4 class="text-base font-bold text-gray-900 leading-tight mb-1">
+                                            {member.name}
+                                        </h4>
+                                        <p class="text-primary text-xs font-semibold mb-1">
+                                            {member.role}
+                                        </p>
+                                        {member.instagram && (
+                                            <a
+                                                href={`https://instagram.com/${member.instagram}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="text-[11px] text-gray-500 hover:text-pink-600 transition-colors"
+                                            >
+                                                @{member.instagram}
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )
+            }
+        </div>
+    </section>
+
+    <script>
+        import { initScrollAnimations } from "../scripts/scrollAnimations.js";
+
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                initScrollAnimations();
+            }, 50);
+        });
+    </script>
+</Layout>

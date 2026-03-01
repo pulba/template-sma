@@ -2,6 +2,7 @@
 // Trigger Tina Schema Update
 import { defineConfig } from "tinacms"
 import { SOCIAL_ICON_REGISTRY } from "../src/config/socialIcons"
+import { PendaftaranScreen } from "./PendaftaranScreen"
 
 const socialIconOptions = Object.entries(SOCIAL_ICON_REGISTRY ?? {}).map(
   ([key, value]) => ({
@@ -14,6 +15,14 @@ export default defineConfig({
   clientId: "e445f084-d975-490e-aa84-8047d4e74536",
   token: "ec9871b59d5a5cf9fb8345a60977db23b7b898d7",
   branch: 'main',
+
+  cmsCallback: (cms) => {
+    cms.screens.add({
+      name: 'Pendaftaran PPDB',
+      Component: PendaftaranScreen,
+    });
+    return cms;
+  },
 
   local: {
     enabled: false,
@@ -88,6 +97,22 @@ export default defineConfig({
           },
           {
             type: "string",
+            name: "status",
+            label: "Post Status",
+            description: "Pilih status tayang post",
+            required: true,
+            ui: {
+              component: "select",
+            },
+            options: [
+              { label: "Draft", value: "draft" },
+              { label: "Terbit (Published)", value: "published" },
+              { label: "Jadwalkan (Scheduled)", value: "scheduled" },
+              { label: "Take Down", value: "takedown" },
+            ],
+          },
+          {
+            type: "string",
             name: "description",
             label: "Description",
             ui: {
@@ -98,8 +123,19 @@ export default defineConfig({
             type: "string",
             name: "category",
             label: "Category",
-            description: "Gunakan huruf kecil, tanpa spasi. Contoh: akademik, kurikulum, event",
+            description: "Pilih kategori post",
             required: true,
+            ui: {
+              component: "select",
+            },
+            options: [
+              { label: "Akademik", value: "akademik" },
+              { label: "Kurikulum", value: "kurikulum" },
+              { label: "News", value: "news" },
+              { label: "Pengumuman", value: "pengumuman" },
+              { label: "Prestasi", value: "prestasi" },
+              { label: "Event", value: "event" }
+            ],
           },
           {
             type: "image",
@@ -107,6 +143,7 @@ export default defineConfig({
             label: "Featured Image",
             description: "Ukuran gambar maksimal 1MB",
           },
+
           {
             type: "rich-text",
             name: "body",
@@ -674,8 +711,8 @@ export default defineConfig({
       // collection ppdb
       {
         name: "ppdbSettings",
-        label: "PPDB",
-        path: "src/content/ppdb",
+        label: "Pendaftaran",
+        path: "src/content/pendaftaran",
         format: "json",
         ui: {
           allowedActions: {
@@ -738,6 +775,76 @@ export default defineConfig({
 
               { type: "image", name: "customImage", label: "Gambar Pamflet (Custom)" },
 
+            ]
+          }
+        ]
+      },
+      // OSIS Collection
+      {
+        name: "osis",
+        label: "OSIS",
+        path: "src/content/osis",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          { type: "string", name: "periode", label: "Periode Kepengurusan", required: true },
+          { type: "image", name: "heroImage", label: "Gambar Latar Belakang (Hero)" },
+          { type: "string", name: "visi", label: "Visi", ui: { component: "textarea" }, required: true },
+          {
+            type: "object",
+            name: "misi",
+            label: "Misi",
+            list: true,
+            ui: {
+              itemProps: (item) => ({ label: item?.poin || "Misi Baru" })
+            },
+            fields: [
+              { type: "string", name: "poin", label: "Poin Misi", required: true }
+            ]
+          },
+          {
+            type: "object",
+            name: "pembina",
+            label: "Pembina OSIS",
+            fields: [
+              { type: "string", name: "name", label: "Nama Lengkap", required: true },
+              { type: "string", name: "jabatan", label: "Jabatan" },
+              { type: "image", name: "avatar", label: "Foto Pembina" }
+            ]
+          },
+          {
+            type: "object",
+            name: "inti",
+            label: "Pengurus Inti",
+            list: true,
+            ui: {
+              itemProps: (item) => ({ label: item?.name ? `${item.name} (${item.role})` : "Pengurus Baru" })
+            },
+            fields: [
+              { type: "string", name: "name", label: "Nama Lengkap", required: true },
+              { type: "string", name: "role", label: "Jabatan (ex: Ketua, Sekretaris)", required: true },
+              { type: "image", name: "avatar", label: "Foto Pengurus" },
+              { type: "string", name: "instagram", label: "Instagram Username (Tanpa @)" }
+            ]
+          },
+          {
+            type: "object",
+            name: "sekbid",
+            label: "Koordinator / Sekbid",
+            list: true,
+            ui: {
+              itemProps: (item) => ({ label: item?.name ? `${item.name} (${item.role})` : "Sekbid Baru" })
+            },
+            fields: [
+              { type: "string", name: "name", label: "Nama Lengkap", required: true },
+              { type: "string", name: "role", label: "Jabatan Sekbid", required: true },
+              { type: "image", name: "avatar", label: "Foto Pengurus" },
+              { type: "string", name: "instagram", label: "Instagram Username (Tanpa @)" }
             ]
           }
         ]

@@ -1,5 +1,5 @@
 ---
-// src/pages/dashboard/ppdb.astro
+// src/pages/dashboard/pendaftaran.astro
 import Layout from "../../layouts/Layout.astro";
 import { getAllUsers } from "../../lib/db";
 
@@ -292,25 +292,25 @@ const allStats = calculateStats(allUsers);
                     </td>
                     <td class="px-3 py-2 whitespace-nowrap text-sm font-medium">
                       <a
-                        href={`/dashboard/ppdb/detail?id=${user.id}`}
+                        href={`/dashboard/pendaftaran/detail?id=${user.id}`}
                         class="text-secondary hover:text-blue-900 mr-3"
                       >
                         Detail
                       </a>
                       <a
-                        href={`/api/ppdb/update-status?id=${user.id}&status=approved`}
+                        href={`/api/pendaftaran/update-status?id=${user.id}&status=approved`}
                         class="text-green-600 hover:text-green-900 mr-2 action-approve"
                       >
                         Terima
                       </a>
                       <a
-                        href={`/api/ppdb/update-status?id=${user.id}&status=rejected`}
+                        href={`/api/pendaftaran/update-status?id=${user.id}&status=rejected`}
                         class="text-red-600 hover:text-red-900 action-reject"
                       >
                         Tolak
                       </a>
                       <a
-                        href={`/api/ppdb/delete?id=${user.id}`}
+                        href={`/api/pendaftaran/delete?id=${user.id}`}
                         class="text-gray-600 hover:text-gray-900 ml-2 action-delete"
                       >
                         Hapus
@@ -394,7 +394,7 @@ const allStats = calculateStats(allUsers);
       exportBtn.addEventListener("click", () => {
         const tahun = new URLSearchParams(window.location.search).get("tahun");
 
-        let url = "/api/ppdb/export?";
+        let url = "/api/pendaftaran/export?";
 
         if (tahun && tahun !== "Semua") {
           url += `tahun=${encodeURIComponent(tahun)}`;

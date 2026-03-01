@@ -40,7 +40,7 @@ if (menuItems.length === 0) {
 }
 
 // Ambil data PPDB untuk label CTA
-const ppdbCollection = await getCollection("ppdb");
+const ppdbCollection = await getCollection("pendaftaran");
 const ppdbData = ppdbCollection[0]?.data?.datappdb;
 const ppdbLabel = ppdbData?.ppdbAlias || "PPDB";
 
@@ -87,8 +87,8 @@ const isActiveLink = (href: string): boolean => {
         <!-- Nama Sekolah -->
         {
           schoolInfo.showName && (
-            <div class="hidden sm:flex flex-col leading-tight">
-              <span class="text-base font-bold text-heading uppercase tracking-wide">
+            <div class="flex flex-col leading-tight">
+              <span class="text-sm sm:text-base font-bold text-heading uppercase tracking-wide">
                 {schoolInfo.name}
               </span>
             </div>
@@ -128,7 +128,7 @@ const isActiveLink = (href: string): boolean => {
       <div class="flex items-center gap-3">
         <!-- CTA Button Desktop -->
         <a
-          href="/ppdb"
+          href="/pendaftaran"
           class="hidden lg:inline-flex cta-btn items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-[13px] transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98]"
         >
           <svg
@@ -294,7 +294,7 @@ const isActiveLink = (href: string): boolean => {
       <!-- Mobile CTA -->
       <div class="p-4 border-t border-border/30">
         <a
-          href="/ppdb"
+          href="/pendaftaran"
           class="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-primary to-secondary transition-all duration-200 active:scale-[0.98]"
           x-on:click="open = false"
         >

@@ -6,12 +6,16 @@ import Highlight from "../components/Highlight.astro";
 import Contact from "../components/Contact.astro";
 import "../styles/global.css";
 import { getCollection } from "astro:content";
+import { getVisiblePosts } from "../utils/postFilter";
 import websiteSettings from "../content/settings/website.json";
 import HeroSection from "../components/HeroSection.astro";
 import StaffList from "../components/StaffList.astro";
 import Year from "../components/Year.astro";
 import GallerySlider from "../components/GallerySlider.astro";
-const allPosts = await getCollection("posts");
+import OsisInti from "../components/OsisInti.astro";
+
+const rawPosts = await getCollection("posts");
+const allPosts = getVisiblePosts(rawPosts);
 
 // Proses posts untuk mendapatkan category dan slug yang benar
 const processedPosts = allPosts.map((post) => {
@@ -119,6 +123,7 @@ const latestPosts = processedPosts
       </div>
     </div>
   </section>
+  <OsisInti />
   <section class="py-24 bg-primary text-white">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-20" data-animate="fade">
@@ -156,7 +161,7 @@ const latestPosts = processedPosts
         <p data-animate="fade" class="text-lg mb-8">
           Klik link berikut untuk informasi dan syarat pendaftaran siswa baru
         </p>
-        <a href="/ppdb">
+        <a href="/pendaftaran">
           <span
             class="bg-surface text-primary rounded-sm py-2 px-4"
             data-animate="fade">FORMULIR PENDAFTARAN</span

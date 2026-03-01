@@ -3,9 +3,11 @@ import Layout from "../../layouts/Layout.astro";
 import CardPosts from "../../components/CardPosts.astro";
 import Pagination from "../../components/Pagination.astro";
 import { getCollection } from "astro:content";
+import { getVisiblePosts } from "../../utils/postFilter";
 
 // Ambil semua post
-const allPosts = await getCollection("posts");
+const rawPosts = await getCollection("posts");
+const allPosts = getVisiblePosts(rawPosts);
 
 // Kelompokkan berdasarkan kategori dengan validasi
 const postsByCategory = {};

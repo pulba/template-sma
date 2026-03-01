@@ -1,10 +1,10 @@
 ---
-//src/pages/ppdb.astro
+//src/pages/pendaftaran.astro
 import Layout from "../layouts/Layout.astro";
 import Year from "../components/Year.astro";
 import { getCollection } from "astro:content";
 // Ambil data sekolah dari Tina CMS
-const ppdbData = await getCollection("ppdb");
+const ppdbData = await getCollection("pendaftaran");
 const settings = ppdbData[0]?.data?.datappdb || {
   schoolName: "",
   ppdbAlias: "",
@@ -87,13 +87,13 @@ const settings = ppdbData[0]?.data?.datappdb || {
     <!-- Navigation Tabs -->
     <div class="flex border-b border-gray-200 mb-8">
       <a
-        href="/ppdb"
+        href="/pendaftaran"
         class="p-3 text-sm md:text-lg font-medium text-blue-600 border-b-2 border-blue-600"
       >
         Form Pendaftaran
       </a>
       <a
-        href="/ppdb/status"
+        href="/pendaftaran/status"
         class="p-3 text-sm md:text-lg font-medium text-gray-500 hover:text-blue-600"
       >
         Cek Status
@@ -558,7 +558,7 @@ const settings = ppdbData[0]?.data?.datappdb || {
               Tutup
             </button>
             <a
-              href="/ppdb/status"
+              href="/pendaftaran/status"
               id="checkStatusBtn"
               class="flex-1 px-4 py-3 bg-gray-100 text-gray-800 font-medium rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 transition duration-200 text-center hidden"
             >
@@ -593,7 +593,7 @@ const settings = ppdbData[0]?.data?.datappdb || {
       data.pernyataan_keputusan = formData.has("pernyataan_keputusan");
 
       try {
-        const response = await fetch("/api/ppdb/register", {
+        const response = await fetch("/api/pendaftaran/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

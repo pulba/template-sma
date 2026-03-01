@@ -1,4 +1,4 @@
-// src/pages/api/ppdb/register.ts
+// src/pages/api/pendaftaran/register.ts
 import type { APIRoute } from 'astro';
 import { insertUser, checkUsersTable } from '../../../lib/db';
 

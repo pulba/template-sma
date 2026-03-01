@@ -1,5 +1,5 @@
 ---
-// src/pages/ppdb/status.astro
+// src/pages/pendaftaran/status.astro
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -86,7 +86,7 @@ const jsPpdbData = {
       </div>
 
       <div class="mt-8 text-center">
-        <a href="/ppdb" class="text-blue-600 hover:text-blue-800 font-medium">
+        <a href="/pendaftaran" class="text-blue-600 hover:text-blue-800 font-medium">
           ← Kembali ke Form Pendaftaran
         </a>
       </div>
@@ -152,7 +152,7 @@ const jsPpdbData = {
 
         try {
           const response = await fetch(
-            `/api/ppdb/get-status?kode=${encodeURIComponent(kode)}`,
+            `/api/pendaftaran/get-status?kode=${encodeURIComponent(kode)}`,
           );
 
           const result = await response.json();

@@ -1,4 +1,4 @@
-// src/pages/api/ppdb/delete.ts
+// src/pages/api/pendaftaran/delete.ts
 import type { APIRoute } from 'astro';
 import { deleteUser } from '../../../lib/db';
 
@@ -23,7 +23,7 @@ export const GET: APIRoute = async ({ url }) => {
             return new Response(null, {
                 status: 302,
                 headers: {
-                    'Location': '/dashboard/ppdb'
+                    'Location': '/dashboard/pendaftaran'
                 }
             });
         } else {

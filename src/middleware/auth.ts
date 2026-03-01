@@ -6,11 +6,11 @@ import { verifySession, destroySession } from '../lib/auth';
 const PROTECTED_ROUTES = [
   '/dashboard',
   '/dashboard/',
-  '/dashboard/ppdb',
-  '/dashboard/ppdb/',
-  '/dashboard/ppdb/detail',
-  '/api/ppdb/update-status',
-  '/api/ppdb/export'
+  '/dashboard/pendaftaran',
+  '/dashboard/pendaftaran/',
+  '/dashboard/pendaftaran/detail',
+  '/api/pendaftaran/update-status',
+  '/api/pendaftaran/export'
 ];
 
 export function onRequest(context: APIContext, next: MiddlewareNext) {

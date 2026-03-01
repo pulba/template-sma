@@ -1,0 +1,70 @@
+{
+  "periode": "2026/2027",
+  "heroImage": "/uploads/erika-fletcher-MZxqc6n9qCw-unsplash.jpg",
+  "visi": "Menjadikan OSIS SMA Negeri 1 sebagai wadah yang komunikatif, inovatif, dan berprestasi berlandaskan nilai-nilai ketuhanan.",
+  "misi": [
+    {
+      "poin": "Meningkatkan ketakwaan kepada Tuhan Yang Maha Esa melalui kegiatan keagamaan."
+    },
+    {
+      "poin": "Membangun lingkungan sekolah yang disiplin, aman, dan nyaman."
+    },
+    {
+      "poin": "Meningkatkan prestasi siswa di bidang akademik dan non-akademik."
+    },
+    {
+      "poin": "Menjalin komunikasi yang baik antara guru, siswa, dan staf sekolah."
+    }
+  ],
+  "pembina": {
+    "name": "Bpk. Budi Santoso, S.Pd",
+    "jabatan": "Pembina OSIS",
+    "avatar": "/uploads/danny-ocean-ehUYU820lcA-unsplash.jpg"
+  },
+  "inti": [
+    {
+      "name": "Ahmad Rizky",
+      "role": "Ketua OSIS",
+      "avatar": "/uploads/naufal-osn-informatika.jpeg",
+      "instagram": "ahmad_rzky"
+    },
+    {
+      "name": "Siti Aminah",
+      "role": "Wakil Ketua",
+      "avatar": "/uploads/model.png",
+      "instagram": "sitiaminah_22"
+    },
+    {
+      "name": "Bima Saputra",
+      "role": "Sekretaris 1",
+      "avatar": "/uploads/Ilustrasi-Pijar-2-968618750.webp",
+      "instagram": "bimsput"
+    },
+    {
+      "name": "Dina Amalia",
+      "role": "Bendahara 1",
+      "avatar": "/uploads/doctake-9J9LFdkvhU4-unsplash.jpg",
+      "instagram": "dinamalia"
+    }
+  ],
+  "sekbid": [
+    {
+      "name": "Fahri Ramadhan",
+      "role": "Ketua Sekbid Keagamaan",
+      "avatar": "/uploads/Ilustrasi-Pijar-2-968618750.webp",
+      "instagram": "fhr_rmd"
+    },
+    {
+      "name": "Putri Maharani",
+      "role": "Ketua Sekbid Olahraga",
+      "avatar": "/uploads/Ilustrasi-Pijar-2-968618750.webp",
+      "instagram": "putrimh"
+    },
+    {
+      "name": "Rendi Pangalila",
+      "role": "Ketua Sekbid Kesenian",
+      "avatar": "/uploads/f69afd4f-c8cb-4c58-a529-9e12b88835e9.jpeg",
+      "instagram": "rendip"
+    }
+  ]
+}

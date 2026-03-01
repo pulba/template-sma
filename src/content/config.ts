@@ -34,6 +34,9 @@ const posts = defineCollection({
 
     // Tambahkan customCategory untuk category "other"
     customCategory: z.string().optional(),
+
+    // Status post (draft, published, scheduled, takedown)
+    status: z.string().default('published'),
   }),
 });
 
@@ -371,6 +374,42 @@ const contactCollection = defineCollection({
   }),
 });
 
+// OSIS Collection
+const osisCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    periode: z.string(),
+    heroImage: z.string().optional(),
+    visi: z.string(),
+    misi: z.array(
+      z.object({
+        poin: z.string(),
+      })
+    ),
+    pembina: z.object({
+      name: z.string(),
+      avatar: z.string().optional(),
+      jabatan: z.string().optional(),
+    }),
+    inti: z.array(
+      z.object({
+        name: z.string(),
+        role: z.string(),
+        avatar: z.string().optional(),
+        instagram: z.string().optional(),
+      })
+    ).default([]),
+    sekbid: z.array(
+      z.object({
+        name: z.string(),
+        role: z.string(),
+        avatar: z.string().optional(),
+        instagram: z.string().optional(),
+      })
+    ).default([])
+  })
+});
+
 //  export collections
 export const collections = {
   posts,
@@ -378,8 +417,9 @@ export const collections = {
   staff,
   pamflate,
   extracurricular,
-  ppdb: ppdbSettings,
+  pendaftaran: ppdbSettings,
   settings: websiteSettingsCollection,
   authors: authorsCollection,
-  contact: contactCollection
+  contact: contactCollection,
+  osis: osisCollection
 };
