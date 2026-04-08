@@ -344,57 +344,15 @@ const generateBreadcrumbSchema = () => {
 const breadcrumbSchema = generateBreadcrumbSchema();
 ---
 
-<!-- Favicon & Icons -->
-<link rel="icon" href={siteInfo.favicon} type="image/x-icon" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-
-<!-- Preconnect & DNS Prefetch for Performance -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-<link rel="dns-prefetch" href="https://www.google-analytics.com" />
-
-<!-- External Stylesheets -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-/>
-
-<!-- ⚡ CRITICAL: Charset MUST be first (Lighthouse requirement) -->
+<!-- ⚡ CRITICAL: Charset MUST be first (Lighthouse & Scraper requirement) -->
 <meta charset="UTF-8" />
-
-<!-- Basic Meta Tags -->
-<title>{pageTitle}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{pageTitle}</title>
 <meta name="description" content={pageDescription} />
 <meta name="theme-color" content="#1a1a2e" />
 <meta name="format-detection" content="telephone=no" />
-{
-  globalMeta.defaultKeywords && (
-    <meta name="keywords" content={globalMeta.defaultKeywords} />
-  )
-}
-{globalMeta.author && <meta name="author" content={globalMeta.author} />}
-{noindex && <meta name="robots" content={robotsContent} />}
 
-<!-- Apple Mobile Web App -->
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<meta name="apple-mobile-web-app-title" content={siteInfo.siteName} />
-
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalUrl} />
-
-<!-- Sitemap & RSS -->
-<link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
-
-<!-- Language Alternate -->
-<link rel="alternate" hreflang="id" href={siteInfo.siteUrl} />
-<link rel="alternate" hreflang="x-default" href={siteInfo.siteUrl} />
-
-<!-- Open Graph Meta Tags -->
+<!-- Open Graph Meta Tags (Must be high up for WhatsApp) -->
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={pageDescription} />
 <meta property="og:type" content={pageType} />
@@ -405,7 +363,7 @@ const breadcrumbSchema = generateBreadcrumbSchema();
 {
   pageImage && (
     <>
-      <meta property="og:image" content={getFullImageUrl(pageImage)} />
+      <meta property="og:image" itemprop="image" content={getFullImageUrl(pageImage)} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={pageTitle} />
@@ -449,6 +407,48 @@ const breadcrumbSchema = generateBreadcrumbSchema();
     </>
   )
 }
+
+<!-- Basic Options Layer 2 -->
+{
+  globalMeta.defaultKeywords && (
+    <meta name="keywords" content={globalMeta.defaultKeywords} />
+  )
+}
+{globalMeta.author && <meta name="author" content={globalMeta.author} />}
+{noindex && <meta name="robots" content={robotsContent} />}
+
+<!-- Apple Mobile Web App -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content={siteInfo.siteName} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Sitemap & RSS -->
+<link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+<!-- Language Alternate -->
+<link rel="alternate" hreflang="id" href={siteInfo.siteUrl} />
+<link rel="alternate" hreflang="x-default" href={siteInfo.siteUrl} />
+
+<!-- Favicon & Icons -->
+<link rel="icon" href={siteInfo.favicon} type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+<!-- Preconnect & DNS Prefetch for Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+<!-- External Stylesheets -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+/>
 
 <!-- Site Verification -->
 {
