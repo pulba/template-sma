@@ -113,9 +113,17 @@ if (category) {
       .slice(0, 4); // Maximum 4 related posts
   } catch (error) {}
 }
+// Generate published time for SEO
+const publishedTime = pubdateDate ? pubdateDate.toISOString() : undefined;
 ---
 
-<Layout title={title} description={description}>
+<Layout 
+  title={title} 
+  description={description} 
+  image={heroSrc} 
+  type="article" 
+  publishedTime={publishedTime}
+>
   <section class="py-12">
     <div
       class="container px-6 mx-auto w-full h-full overflow-hidden flex flex-col lg:flex-row gap-6"

@@ -37,6 +37,7 @@ const posts = defineCollection({
 
     // Status post (draft, published, scheduled, takedown)
     status: z.string().default('published'),
+    scheduledTime: z.coerce.date().optional(),
   }),
 });
 

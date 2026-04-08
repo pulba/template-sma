@@ -23,9 +23,9 @@ export function getVisiblePosts(posts: any[]) {
 
         // Scheduled posts are only visible if their publish date has passed
         if (status === 'scheduled') {
-            const pubDate = post.data?.pubdate ? new Date(post.data.pubdate) : null;
-            if (!pubDate) return false; // If scheduled but no date, don't show
-            return pubDate <= now;
+            const targetTime = post.data?.scheduledTime ? new Date(post.data.scheduledTime) : (post.data?.pubdate ? new Date(post.data.pubdate) : null);
+            if (!targetTime) return false;
+            return targetTime <= now;
         }
 
         // Published posts are always visible

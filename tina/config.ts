@@ -112,6 +112,16 @@ export default defineConfig({
             ],
           },
           {
+            type: "datetime",
+            name: "scheduledTime",
+            label: "Waktu Terjadwal",
+            description: "Waktu post direncanakan tayang otomatis (berlaku khusus status Jadwalkan)",
+            ui: {
+              dateFormat: "DD MMMM YYYY",
+              timeFormat: "HH:mm"
+            }
+          },
+          {
             type: "string",
             name: "description",
             label: "Description",
